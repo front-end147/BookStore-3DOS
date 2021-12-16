@@ -1,0 +1,305 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Bookstore</title>
+    <link rel="stylesheet" href="css/style.css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" integrity="sha512-Fo3rlrZj/k7ujTnHg4CGR2D7kSs0v4LLanw2qksYuRlEzO+tcaEPQogQ0KaoGN26/zrn20ImR1DfuLWnOo7aBA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="shortcut icon" href="images/favicon.ico" type="image/x-icon">
+  </head>
+  <body>
+    <!-- header -->
+    <header>
+      <!-- nav menu -->
+      <nav class="nav__menu" id="navMenu">
+        <div class="container">
+          <a href="" class="logo"><i class="fas fa-book"></i>BookStore</a>
+          <i class="fas fa-bars" id="toggleMenu"></i>
+          <ul id="menu">
+            <li><a href="#" data-nav="home">Home</a></li>
+            <li><a href="#" data-nav="products">Products</a></li>
+            <li><a href="#" data-nav="contact">Contact Us</a></li>
+            <li><a href="#" class="register__btn">Register</a></li>
+          </ul>
+        </div>
+      </nav>
+      <!-- carousel slider -->
+      <div class="slider" id="home">
+        <div class="container">
+          
+        </div>
+      </div>
+    </header>
+    <!-- register form and login -->
+    <div class="user__form" id="userForm">
+      <form method="post" action="" class="register">
+        <h3>Register</h3>
+        <input type="text" name="name" id="name" placeholder="Full Name" required />
+        <input type="email" name="email" id="mail" placeholder="Email" />
+        <input type="password" name="password" id="pass" placeholder="Password" />
+        <input type="password" name="confirmPassword" id="c_pass" placeholder="Confirm Password" />
+        <div class="terms__question question">
+          <input type="checkbox" name="agree" id="termCheck" />
+          <label for="termCheck">I accept <a href="#">Terms of Use</a></label>
+        </div>
+        <button type="submit">Register</button>
+        <div id="loginChange" class="change">Have an account? <span>Login Now</span></div>
+      </form>
+      <form method="post" action="" class="login">
+        <h3>Log in</h3>
+        <input type="email" name="mail" id="lEmail" placeholder="Email" />
+        <input type="password" name="lPassword" id="lPassword" placeholder="Password" />
+        <div class="remember__question question">
+          <input type="checkbox" name="remember" id="rememberCheck" />
+          <label for="rememberCheck">Remember me</label>
+        </div>
+        <button type="submit">Log in</button>
+        <div id="registerChange" class="change">Don't have account? <span>Register Now</span></div>
+      </form>
+    </div>
+    <!-- products -->
+    <section id="products" class="products">
+      <ul class="filter__tabs">
+        <li><a href="#" class="active">All</a></li>
+        <li><a href="#">New</a></li>
+        <li><a href="#">Coming</a></li>
+      </ul>
+      <div class="container box__container">
+        <div class="box">
+          <a href="#" class="img__box">
+            <img src="images/Book 1.webp" alt="" />
+          </a>
+          <div class="content">
+            <a href="#" class="title">HTML, Comprehensive Concepts And Techniques by Shelly Woods Dorin</a>
+            <p class="author">by Shelly Woods Dorin</p>
+            <div class="star__container">
+              <i class="fas fa-star"></i>
+              <i class="fas fa-star"></i>
+              <i class="fas fa-star"></i>
+              <i class="fas fa-star"></i>
+              <i class="far fa-star"></i>
+            </div>
+            <div class="price"><sup>EGP</sup>610<sup>00</sup></div>
+          </div>
+        </div>
+        <div class="box">
+          <a href="#" class="img__box">
+            <img src="images/Book 2.webp" alt="" />
+          </a>
+          <div class="content">
+            <a href="#" class="title">Start Programming Using Html Css And Javascript</a>
+            <p class="author">by I Fajfar</p>
+            <div class="star__container">
+              <i class="fas fa-star"></i>
+              <i class="fas fa-star"></i>
+              <i class="fas fa-star"></i>
+              <i class="fas fa-star"></i>
+              <i class="fas fa-star-half-alt"></i>
+            </div>
+            <div class="price"><sup>EGP</sup>835<sup>00</sup></div>
+          </div>
+        </div>
+        <div class="box">
+          <a href="#" class="img__box">
+            <img src="images/Book 3.webp" alt="" />
+          </a>
+          <div class="content">
+            <a href="#" class="title">Digital Marketing Strategy - An Integrated Approach To Online Marketing</a>
+            <p class="author">by Simon Kingsnorth</p>
+            <div class="star__container">
+              <i class="fas fa-star"></i>
+              <i class="fas fa-star"></i>
+              <i class="fas fa-star"></i>
+              <i class="fas fa-star"></i>
+              <i class="far fa-star"></i>
+            </div>
+            <div class="price"><sup>EGP</sup>1088<sup>00</sup></div>
+          </div>
+        </div>
+        <div class="box">
+          <a href="#" class="img__box">
+            <img src="images/Book 4.webp" alt="" />
+          </a>
+          <div class="content">
+            <a href="#" class="title">Spring Into HTML and CSS</a>
+            <p class="author">by Molly E. Holzschlag</p>
+            <div class="star__container">
+              <i class="fas fa-star"></i>
+              <i class="fas fa-star"></i>
+              <i class="fas fa-star"></i>
+              <i class="fas fa-star-half-alt"></i>
+              <i class="far fa-star"></i>
+            </div>
+            <div class="price"><sup>EGP</sup>197<sup>00</sup></div>
+          </div>
+        </div>
+        <div class="box">
+          <a href="#" class="img__box">
+            <img src="images/Book 1.webp" alt="" />
+          </a>
+          <div class="content">
+            <a href="#" class="title">HTML, Comprehensive Concepts And Techniques by Shelly Woods Dorin</a>
+            <p class="author">by Shelly Woods Dorin</p>
+            <div class="star__container">
+              <i class="fas fa-star"></i>
+              <i class="fas fa-star"></i>
+              <i class="fas fa-star"></i>
+              <i class="fas fa-star"></i>
+              <i class="far fa-star"></i>
+            </div>
+            <div class="price"><sup>EGP</sup>610<sup>00</sup></div>
+          </div>
+        </div>
+        <div class="box">
+          <a href="#" class="img__box">
+            <img src="images/Book 2.webp" alt="" />
+          </a>
+          <div class="content">
+            <a href="#" class="title">Start Programming Using Html Css And Javascript</a>
+            <p class="author">by I Fajfar</p>
+            <div class="star__container">
+              <i class="fas fa-star"></i>
+              <i class="fas fa-star"></i>
+              <i class="fas fa-star"></i>
+              <i class="fas fa-star"></i>
+              <i class="fas fa-star-half-alt"></i>
+            </div>
+            <div class="price"><sup>EGP</sup>835<sup>00</sup></div>
+          </div>
+        </div>
+        <div class="box">
+          <a href="#" class="img__box">
+            <img src="images/Book 3.webp" alt="" />
+          </a>
+          <div class="content">
+            <a href="#" class="title">Digital Marketing Strategy - An Integrated Approach To Online Marketing</a>
+            <p class="author">by Simon Kingsnorth</p>
+            <div class="star__container">
+              <i class="fas fa-star"></i>
+              <i class="fas fa-star"></i>
+              <i class="fas fa-star"></i>
+              <i class="fas fa-star"></i>
+              <i class="far fa-star"></i>
+            </div>
+            <div class="price"><sup>EGP</sup>1088<sup>00</sup></div>
+          </div>
+        </div>
+        <div class="box">
+          <a href="#" class="img__box">
+            <img src="images/Book 4.webp" alt="" />
+          </a>
+          <div class="content">
+            <a href="#" class="title">Spring Into HTML and CSS</a>
+            <p class="author">by Molly E. Holzschlag</p>
+            <div class="star__container">
+              <i class="fas fa-star"></i>
+              <i class="fas fa-star"></i>
+              <i class="fas fa-star"></i>
+              <i class="fas fa-star-half-alt"></i>
+              <i class="far fa-star"></i>
+            </div>
+            <div class="price"><sup>EGP</sup>197<sup>00</sup></div>
+          </div>
+        </div>
+        <div class="box">
+          <a href="#" class="img__box">
+            <img src="images/Book 1.webp" alt="" />
+          </a>
+          <div class="content">
+            <a href="#" class="title">HTML, Comprehensive Concepts And Techniques by Shelly Woods Dorin</a>
+            <p class="author">by Shelly Woods Dorin</p>
+            <div class="star__container">
+              <i class="fas fa-star"></i>
+              <i class="fas fa-star"></i>
+              <i class="fas fa-star"></i>
+              <i class="fas fa-star"></i>
+              <i class="far fa-star"></i>
+            </div>
+            <div class="price"><sup>EGP</sup>610<sup>00</sup></div>
+          </div>
+        </div>
+        <div class="box">
+          <a href="#" class="img__box">
+            <img src="images/Book 2.webp" alt="" />
+          </a>
+          <div class="content">
+            <a href="#" class="title">Start Programming Using Html Css And Javascript</a>
+            <p class="author">by I Fajfar</p>
+            <div class="star__container">
+              <i class="fas fa-star"></i>
+              <i class="fas fa-star"></i>
+              <i class="fas fa-star"></i>
+              <i class="fas fa-star"></i>
+              <i class="fas fa-star-half-alt"></i>
+            </div>
+            <div class="price"><sup>EGP</sup>835<sup>00</sup></div>
+          </div>
+        </div>
+        <div class="box">
+          <a href="#" class="img__box">
+            <img src="images/Book 3.webp" alt="" />
+          </a>
+          <div class="content">
+            <a href="#" class="title">Digital Marketing Strategy - An Integrated Approach To Online Marketing</a>
+            <p class="author">by Simon Kingsnorth</p>
+            <div class="star__container">
+              <i class="fas fa-star"></i>
+              <i class="fas fa-star"></i>
+              <i class="fas fa-star"></i>
+              <i class="fas fa-star"></i>
+              <i class="far fa-star"></i>
+            </div>
+            <div class="price"><sup>EGP</sup>1088<sup>00</sup></div>
+          </div>
+        </div>
+        <div class="box">
+          <a href="#" class="img__box">
+            <img src="images/Book 4.webp" alt="" />
+          </a>
+          <div class="content">
+            <a href="#" class="title">Spring Into HTML and CSS</a>
+            <p class="author">by Molly E. Holzschlag</p>
+            <div class="star__container">
+              <i class="fas fa-star"></i>
+              <i class="fas fa-star"></i>
+              <i class="fas fa-star"></i>
+              <i class="fas fa-star-half-alt"></i>
+              <i class="far fa-star"></i>
+            </div>
+            <div class="price"><sup>EGP</sup>197<sup>00</sup></div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <!-- footer -->
+    <footer id="contact">
+      <div class="container">
+        <div class="col">
+          <h4>Download Our App</h4>
+          <p>Download App for Android and ios mobile phones</p>
+          <div class="img__box">
+            <a href=""><img src="images/play-store.png" alt="" /></a>
+            <a href=""><img src="images/app-store.png" alt="" /></a>
+          </div>
+        </div>
+        <div class="col">
+          <a href="" class="logo"><i class="fas fa-book"></i>BookStore</a>
+          <p>Our purose to sell many Books for all fields and all people with reasonable cost</p>
+        </div>
+        <div class="col">
+          <h4>Follow Us</h4>
+          <ul>
+            <li><a href="#"><i class="fab fa-facebook"></i>Facebook</a></li>
+            <li><a href="#"><i class="fab fa-twitter"></i>Twitter</a></li>
+            <li><a href="https://www.linkedin.com/in/hamdy-ahmed-b4439a220" target="_blank"><i class="fab fa-linkedin"></i>Linkedin</a></li>
+            <li><a href="https://github.com/front-end147" target="_blank"><i class="fab fa-github"></i>Github</a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="copy__right">&copy; Hamdy, 2021 | 3DOS</div>
+    </footer>
+    <script src="js/script.js"></script>
+  </body>
+</html>
