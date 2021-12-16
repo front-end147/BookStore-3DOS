@@ -5,7 +5,10 @@ const body = document.querySelector("body"),
       allLinks = document.querySelectorAll("#navMenu #menu li a"),
       userForm = document.querySelector(".user__form"),
       registerForm = userForm.querySelector(".register"),
-      loginForm = userForm.querySelector(".login");
+      loginForm = userForm.querySelector(".login"),
+      next = document.querySelector("#next"),
+      prev = document.querySelector("#prev"),
+      slides = document.querySelectorAll(".slide");
 
 toggleMenu.addEventListener("click", () => {
   toggleMenu.classList.toggle("active");
@@ -60,3 +63,31 @@ allLinks.forEach(link => {
     }
   });
 });
+
+// slideshow
+let index = 1;
+showSlide(index);
+
+next.onclick = () => {
+  showSlide(index += 1);
+}
+prev.onclick = () => {
+  showSlide(index -= 1);
+}
+
+function showSlide(n) {
+  if (n > slides.length) {
+    index = 1;
+  }
+  if (n < 1) {
+    index = slides.length;
+  }
+  for (let i = 0; i < slides.length; i++) {
+    slides[i].style.display = "none";
+  }
+  slides[index - 1].style.display = "block";
+}
+// slideshow auto change after 7s
+setInterval(() => {
+  showSlide(index += 1);
+}, 7000);

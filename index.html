@@ -27,8 +27,36 @@
       </nav>
       <!-- carousel slider -->
       <div class="slider" id="home">
-        <div class="container">
-          
+        <div class="controller">
+          <i class="fas fa-angle-left" id="prev"></i>
+          <i class="fas fa-angle-right" id="next"></i>
+        </div>
+        <div class="slide">
+          <img src="images/banner 1.jpg" alt="" />
+          <div class="content">
+            <div class="container">
+              <h3>All Books in one place</h3>
+              <p>in this website you will find the book what you search for</p>
+            </div>
+          </div>
+        </div>
+        <div class="slide">
+          <img src="images/banner 2.jpg" alt="" />
+          <div class="content">
+            <div class="container">
+              <h3>Important Event</h3>
+              <p>in this event you will take a big discount on books you will buy</p>
+            </div>
+          </div>
+        </div>
+        <div class="slide">
+          <img src="images/banner 3.jpg" alt="" />
+          <div class="content">
+            <div class="container">
+              <h3>Big Discount</h3>
+              <p>every 2 months you will get a 10% discount on 2 books you want</p>
+            </div>
+          </div>
         </div>
       </div>
     </header>
@@ -37,11 +65,11 @@
       <form method="post" action="" class="register">
         <h3>Register</h3>
         <input type="text" name="name" id="name" placeholder="Full Name" required />
-        <input type="email" name="email" id="mail" placeholder="Email" />
-        <input type="password" name="password" id="pass" placeholder="Password" />
-        <input type="password" name="confirmPassword" id="c_pass" placeholder="Confirm Password" />
+        <input type="email" name="email" id="mail" placeholder="Email" required />
+        <input type="password" name="password" id="pass" placeholder="Password" required />
+        <input type="password" name="confirmPassword" id="c_pass" placeholder="Confirm Password" required />
         <div class="terms__question question">
-          <input type="checkbox" name="agree" id="termCheck" />
+          <input type="checkbox" name="agree" id="termCheck" required />
           <label for="termCheck">I accept <a href="#">Terms of Use</a></label>
         </div>
         <button type="submit">Register</button>
@@ -49,10 +77,10 @@
       </form>
       <form method="post" action="" class="login">
         <h3>Log in</h3>
-        <input type="email" name="mail" id="lEmail" placeholder="Email" />
-        <input type="password" name="lPassword" id="lPassword" placeholder="Password" />
+        <input type="email" name="mail" id="lEmail" placeholder="Email" required />
+        <input type="password" name="lPassword" id="lPassword" placeholder="Password" required />
         <div class="remember__question question">
-          <input type="checkbox" name="remember" id="rememberCheck" />
+          <input type="checkbox" name="remember" id="rememberCheck" required />
           <label for="rememberCheck">Remember me</label>
         </div>
         <button type="submit">Log in</button>

@@ -5,13 +5,32 @@
   box-sizing: border-box;
   font-family: "Poppins", sans-serif;
 }
+html {
+  /* scrollbar for firefox browser */
+  scrollbar-color: var(--light-color) var(--dark-color);
+  scroll-padding-top: 6rem;
+}
+/* scrollbar for chrome browser */
+::-webkit-scrollbar {
+  width: 0.8rem;
+  height: 0.8rem;
+  background: var(--dark-color);
+}
+::-webkit-scrollbar-thumb {
+  background: var(--light-color);
+}
+::-webkit-scrollbar-thumb:hover {
+  background: #ff7272;
+}
+::selection {
+  background: var(--light-color);
+  color: #fff;
+}
+
 .container {
   width: 100%;
   max-width: 1200px;
   margin: 0 auto;
-}
-html {
-  scroll-padding-top: 6rem;
 }
 @media (max-width: 1200px) {
   .container {
@@ -25,13 +44,14 @@ a {
   color: #fff;
   font-size: 1.7rem;
   transition: 0.3s ease;
+  font-weight: 500;
 }
 .logo:hover {
   letter-spacing: 2px;
 }
 .logo i {
   margin-right: 0.7rem;
-  color: #000;
+  color: var(--light-color);
   transform: rotate(-40deg);
   transition: 0.3s ease;
 }
@@ -45,6 +65,9 @@ body.formActive {
       variables
 =============================*/
 :root {
+  --light-color: #F05454;
+  --dark-color: #30475E;
+  --text-color: #222831;
   --main-transition: 0.5s ease;
 }
 
@@ -56,11 +79,11 @@ header {
 }
 header .nav__menu {
   position: relative;
-  background: rgba(0, 0, 0, 0.5);
+  background: var(--text-color);
 }
 header .nav__menu.down {
   position: fixed;
-  background: #000;
+  background: rgba(34, 40, 49, 0.9);
   width: 100%;
   max-width: 1200px;
   top: 0;
@@ -69,6 +92,7 @@ header .nav__menu.down {
   transition: var(--main-transition);
   border-bottom-left-radius: 15px;
   border-bottom-right-radius: 15px;
+  z-index: 10;
 }
 header .nav__menu .container {
   display: flex;
@@ -82,7 +106,7 @@ header .nav__menu.down .logo {
   font-size: 1.4rem;
 }
 header .nav__menu.down .logo i {
-  color: #fff;
+  color: var(--light-color);
 }
 header .nav__menu #toggleMenu {
   display: none;
@@ -93,7 +117,7 @@ header .nav__menu #toggleMenu {
 }
 header .nav__menu #toggleMenu.active,
 header .nav__menu #toggleMenu:hover {
-  color: #000;
+  color: var(--light-color);
 }
 header .nav__menu ul {
   display: flex;
@@ -111,11 +135,83 @@ header .nav__menu.down ul li a {
   font-size: 0.9rem;
 }
 header .nav__menu ul li a:hover {
-  background: #fff;
-  color: #000;
+  background: var(--light-color);
+  color: #fff;
 }
 header .slider {
-  height: 100vh;
+  height: 90vh;
+  position: relative;
+}
+header .slider .slide {
+  display: none;
+  height: 100%;
+  position: relative;
+  pointer-events: none;
+}
+header .slider .slide:before {
+  content: "";
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  background: rgba(0, 0, 0, 0.7);
+  z-index: 1;
+}
+header .slider .slide img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  animation: fade 1.5s;
+  position: relative;
+}
+header .slider .slide .content {
+  position: absolute;
+  max-width: 800px;
+  width: 100%;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 5;
+}
+header .slider .slide .content h3 {
+  font-size: 4rem;
+  text-align: center;
+  color: var(--light-color);
+  margin-bottom: 0.5rem;
+  font-weight: 500;
+}
+header .slider .slide .content p {
+  text-align: center;
+  margin: 0 auto;
+  color: #eee;
+  font-size: 1.3rem;
+}
+header .slider .controller {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  z-index: 5;
+  user-select: none;
+}
+header .slider .controller i {
+  cursor: pointer;
+  width: 40px;
+  height: 40px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: rgba(0, 0, 0, 0.8);
+  background: var(--dark-color);
+  color: #fff;
+  font-size: 2rem;
+}
+header .slider .controller i:hover {
+  background: var(--light-color);
 }
 
 /*===========================
@@ -170,19 +266,19 @@ header .slider {
   transition: var(--main-transition);
 }
 .user__form form input:not([type="checkbox"]):focus {
-  border-bottom-color: #ff9100;
+  border-bottom-color: var(--light-color);
 }
 .user__form form .question {
   font-size: 0.85rem;
   margin: 0.3rem 0 1rem;
 }
 .user__form form .question label a {
-  color: #0074bd;
+  color: var(--light-color);
 }
 .user__form form button {
   border: 2px solid transparent;
   outline: none;
-  background: #0074bd;
+  background: var(--light-color);
   color: #fff;
   display: block;
   width: 60%;
@@ -193,8 +289,8 @@ header .slider {
   transition: var(--main-transition);
 }
 .user__form form button:hover {
-  border-color: #0074bd;
-  color: #0074bd;
+  border-color: var(--light-color);
+  color: var(--light-color);
   background: transparent;
 }
 .user__form form .change {
@@ -203,7 +299,7 @@ header .slider {
   text-align: center;
 }
 .user__form form .change span {
-  color: #0074bd;
+  color: var(--light-color);
   cursor: pointer;
 }
 
@@ -224,13 +320,14 @@ header .slider {
   display: block;
   padding: 0.5rem 1rem;
   margin: 0 0.5rem;
-  color: #000;
+  color: var(--text-color);
   transition: var(--main-transition);
 }
 .products .filter__tabs li a:hover,
 .products .filter__tabs li a.active {
-  background: #000;
+  background: var(--dark-color);
   color: #fff;
+  font-weight: 500;
 }
 .products .box__container {
   display: grid;
@@ -256,12 +353,12 @@ header .slider {
   padding: 1rem;
 }
 .products .box .content .title {
-  color: #333;
+  color: var(--dark-color);
   font-weight: 500;
   transition: 0.3s ease;
 }
 .products .box .content .title:hover {
-  color: #888;
+  color: var(--light-color);
 }
 .products .box .content .author {
   color: #999;
@@ -282,7 +379,7 @@ header .slider {
       footer
 =============================*/
 footer {
-  background: #000;
+  background: var(--text-color);
 }
 footer .container {
   display: grid;
@@ -299,7 +396,7 @@ footer .col h4 {
 footer .col p {
   font-size: 0.9rem;
   margin-bottom: 0.5rem;
-  color: #888;
+  color: #999;
 }
 footer .col .img__box a {
   display: inline-block;
@@ -321,7 +418,7 @@ footer .col ul {
   list-style: none;
 }
 footer .col ul li a {
-  color: #888;
+  color: #999;
   transition: var(--main-transition);
 }
 footer .col ul li a i {
@@ -334,8 +431,16 @@ footer .col ul li a:hover {
 footer .copy__right {
   color: #fff;
   text-align: center;
-  border-top: 1px solid #333;
+  border-top: 1px solid #444;
   padding: 0.5rem 0;
+}
+
+/*===========================
+      animation
+=============================*/
+@keyframes fade {
+  from {opacity: 0.3;}
+  to {opacity: 1;}
 }
 
 /*===========================
@@ -351,8 +456,8 @@ footer .copy__right {
   header .nav__menu ul {
     position: absolute;
     flex-direction: column;
-    background: #000;
-    top: 100%;
+    background: var(--text-color);
+    top: 115%;
     right: 0.5rem;
     width: 220px;
     transition: var(--main-transition);
@@ -378,14 +483,14 @@ footer .copy__right {
     position: absolute;
     width: 20px;
     height: 20px;
-    background: #000;
+    background: var(--text-color);
     right: 12px;
     top: -10px;
     transform: rotate(45deg);
     transition: background var(--main-transition);
   }
   header .nav__menu ul li:first-child:hover:before {
-    background: #fff;
+    background: var(--light-color);
   }
   footer .container {
     grid-template-columns: repeat(2, 1fr);
@@ -403,7 +508,19 @@ footer .copy__right {
     grid-area: right;
     text-align: center;
   }
+  header .slider .slide .content h3 {
+    font-size: 2.5rem;
+  }
+  header .slider .slide .content p {
+    font-size: 1.1rem;
+    width: 90%;
+    max-width: 500px;
+  }
+  header .slider {
+    height: 70vh;
+  }
 }
+
 @media (max-width: 480px) {
   footer .container {
     grid-template-columns: 1fr;
@@ -421,5 +538,12 @@ footer .copy__right {
   }
   footer .col:nth-of-type(3) {
     grid-area: bottom;
+  }
+  header .slider .slide .content h3 {
+    font-size: 1.8rem;
+  }
+  header .slider .slide .content p {
+    font-size: 0.95rem;
+    width: 80%;
   }
 }
