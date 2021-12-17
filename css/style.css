@@ -465,6 +465,7 @@ footer .copy__right {
     opacity: 0;
     pointer-events: none;
     border-radius: 10px;
+    z-index: 10;
   }
   header .nav__menu ul.active {
     transform: translateY(0);
